@@ -1,0 +1,22 @@
+name: Descomprimir Sitio Web
+on:
+  push:
+    branches: [ main, master ]
+jobs:
+  unzip-process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Descomprimir archivo
+        run: |
+          if [ -f *.zip ]; then
+            unzip -o *.zip -d .
+            rm *.zip
+          fi
+
+      - name: Guardar cambios en GitHub
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Carpetas extraídas automáticamente"
