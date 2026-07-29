@@ -181,6 +181,42 @@
     .faq-item .faq-toggle { transition: transform 0.4s ease; }
     .faq-item.is-open .faq-toggle { transform: rotate(45deg); }
 
+    /* ============= HERO CAROUSEL ============= */
+    .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 8s ease-out;
+        transform: scale(1);
+    }
+    .hero-slide.is-active {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+    .hero-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .hero-dots {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 20;
+    }
+    .hero-dot {
+        width: 40px;
+        height: 3px;
+        background: rgba(255,255,255,0.4);
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .hero-dot.is-active { background: #0B525E; }
+
     /* ============= WHATSAPP FLOAT ============= */
     .whatsapp-button {
         position: fixed;
@@ -232,9 +268,9 @@
 </a>
 
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 border-b border-outline-variant flex justify-between items-center px-6 md:px-margin-desktop h-16 glass-header">
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant flex justify-between items-center px-6 md:px-margin-desktop h-20 glass-header">
 <a href="#top" class="flex items-center">
-<img src="logo.jpg" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-8 md:h-10 w-auto"/>
+<img src="logo-01.png" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-10 md:h-12 w-auto"/>
 </a>
 <nav class="hidden md:flex gap-6 lg:gap-8 items-center">
 <a class="text-primary font-bold text-label-md hover:opacity-70 transition-opacity" href="#tratamientos">Tratamientos</a>
@@ -255,7 +291,7 @@
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-surface md:hidden pt-24 px-margin-mobile">
 <div class="mb-8 pb-6 border-b border-outline-variant">
-<img src="logo.jpg" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-10 w-auto"/>
+<img src="logo-01.png" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-10 w-auto"/>
 </div>
 <nav class="flex flex-col gap-6 text-lg">
 <a class="text-primary font-bold border-b border-outline-variant pb-4" href="#tratamientos" onclick="closeMenu()">Tratamientos</a>
@@ -268,15 +304,29 @@
 </nav>
 </div>
 
-<main id="top" class="pt-16 pb-32 md:pb-0">
+<main id="top" class="pt-20 pb-32 md:pb-0">
 
 <!-- ============================================== -->
 <!-- BANNER TIPO 1: HERO CON TEXT ROTATOR           -->
 <!-- ============================================== -->
 <section class="relative h-[80vh] md:h-[720px] flex items-center overflow-hidden bg-surface-container-low">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-70" alt="Clínica Santa Fe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3KsLZ6ehUxoozagRDWOxEVicCB-q9ZVCTobDB-WCtnccQwWb5ULmd7m4sYgxMaYrYWACqax5qOkydzT024uSe4lt_SBjx-2T78xlLYvdI-xqqQs-aQaHjm3mfn5E0n-3I2TSoJRfDboKYmbItX0-KGFIQZDzjziEZZ9tbsC6xz0oiaSUuRuTS73sD-CS1_vrLZDKAkbxRkfZomU3IVY7bAYAUBB_2xkrAJ_0zGZ72uiuc4y4Uw-6p"/>
-<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+<div class="absolute inset-0 z-0" id="hero-carousel">
+<div class="hero-slide is-active">
+<img alt="Depilación láser en piernas" src="depilacion.jpg"/>
+</div>
+<div class="hero-slide">
+<img alt="Aplicación de Bótox" src="botox.jpg"/>
+</div>
+<div class="hero-slide">
+<img alt="Examen dental" src="dental.jpg"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/40 z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent z-10"></div>
+</div>
+<div class="hero-dots">
+<button class="hero-dot is-active" data-slide="0" aria-label="Depilación láser"></button>
+<button class="hero-dot" data-slide="1" aria-label="Bótox"></button>
+<button class="hero-dot" data-slide="2" aria-label="Odontología"></button>
 </div>
 <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
 <div class="max-w-2xl">
@@ -311,7 +361,7 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-6" data-anim="fade-right">
 <div class="aspect-[4/5] bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover" alt="Interior Clínica Santa Fe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0ZjmDkPDS4-FcvwjOS1poCStxxXSqFnlwLwJZPARxxrtwrXho9YMk3SbTws6fvS0kevkIABB2pPO8IpWNcpF2EEMbxXzlL6GLL9nngFB95cPlrOcO-0sUIhB0hJuYrUYiq03IsehMllzIfjwZMPlGUlQRNfU92XrW_VrKzL32lgPJ3EK06fZjeUJU8oe_XgF2X2NbH7FyTQARhhiF7Fhi1-ORu3vDdvIaU9jl-hh0lTlyG_YBG8u"/>
+<img class="w-full h-full object-cover" alt="Equipo de Clínica Santa Fe" src="dentists-holding-dental-tools.jpg"/>
 </div>
 </div>
 <div class="md:col-span-5 md:col-start-8">
@@ -358,7 +408,7 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <!-- ============================================== -->
 <!-- BANNER TIPO 2: CTA HORIZONTAL CON PARALLAX     -->
 <!-- ============================================== -->
-<section class="relative py-20 md:py-28 overflow-hidden parallax-bg" style="background-image: linear-gradient(rgba(0,58,67,0.92), rgba(0,58,67,0.92)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3KsLZ6ehUxoozagRDWOxEVicCB-q9ZVCTobDB-WCtnccQwWb5ULmd7m4sYgxMaYrYWACqax5qOkydzT024uSe4lt_SBjx-2T78xlLYvdI-xqqQs-aQaHjm3mfn5E0n-3I2TSoJRfDboKYmbItX0-KGFIQZDzjziEZZ9tbsC6xz0oiaSUuRuTS73sD-CS1_vrLZDKAkbxRkfZomU3IVY7bAYAUBB_2xkrAJ_0zGZ72uiuc4y4Uw-6p');">
+<section class="relative py-20 md:py-28 overflow-hidden parallax-bg" style="background-image: linear-gradient(rgba(0,58,67,0.92), rgba(0,58,67,0.92)), url('dentists-holding-dental-tools.jpg');">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
 <div data-anim="fade-right" class="md:col-span-2">
@@ -402,18 +452,19 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-20 md:mb-32">
 <div class="md:col-span-5 order-2 md:order-1" data-anim="fade-right">
 <span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3 block">Tratamiento Destacado</span>
-<h3 class="text-headline-lg font-bold mb-6">Láser CO2 Fraccionado</h3>
-<p class="text-on-surface-variant mb-8 leading-relaxed">Renueva la piel mediante microperforaciones controladas. Trata cicatrices, arrugas profundas y manchas, y estimula la producción de colágeno nuevo para una piel más joven y tersa.</p>
+<h3 class="text-headline-lg font-bold mb-6">Bótox</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">El tratamiento estético más buscado. En una sesión de 15 minutos, sin tiempo de recuperación, suavizamos las líneas de expresión, prevenimos arrugas futuras y devolvemos al rostro un aspecto fresco y descansado de forma segura y natural.</p>
 <ul class="space-y-4 mb-10">
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Renovación superficial y profunda</li>
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Reducción de poros y cicatrices</li>
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Efecto tensor inmediato</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Sesión de 15 minutos</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Sin tiempo de inactividad</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Suaviza y previene arrugas</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Resultados naturales y seguros</li>
 </ul>
-<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20el%20L%C3%A1ser%20CO2%20Fraccionado" target="_blank" rel="noopener noreferrer" class="inline-block bg-verde-petroleo text-white px-8 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all">Agendar Valoración</a>
+<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20el%20tratamiento%20de%20B%C3%B3tox" target="_blank" rel="noopener noreferrer" class="inline-block bg-verde-petroleo text-white px-8 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all">Agendar Valoración</a>
 </div>
 <div class="md:col-span-6 md:col-start-7 order-1 md:order-2" data-anim="fade-left">
 <div class="aspect-[4/5] bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover" alt="Láser CO2 Fraccionado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0ZjmDkPDS4-FcvwjOS1poCStxxXSqFnlwLwJZPARxxrtwrXho9YMk3SbTws6fvS0kevkIABB2pPO8IpWNcpF2EEMbxXzlL6GLL9nngFB95cPlrOcO-0sUIhB0hJuYrUYiq03IsehMllzIfjwZMPlGUlQRNfU92XrW_VrKzL32lgPJ3EK06fZjeUJU8oe_XgF2X2NbH7FyTQARhhiF7Fhi1-ORu3vDdvIaU9jl-hh0lTlyG_YBG8u"/>
+<img class="w-full h-full object-cover" alt="Aplicación de Bótox" src="botox.jpg"/>
 </div>
 </div>
 </div>
@@ -552,9 +603,9 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="100" class="bg-white border border-outline-variant">
-<div class="aspect-[4/5] flex items-center justify-center bg-surface-container-low relative">
-<span class="material-symbols-outlined text-primary opacity-20" style="font-size: 120px;">person</span>
-<span class="absolute top-4 right-4 text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">02</span>
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" alt="Dr. Miguel Ángel Siller" src="MIGUEL_ANGEL.webp"/>
+<span class="absolute top-4 right-4 text-label-md font-semibold text-white bg-primary/90 backdrop-blur-sm px-3 py-1 uppercase tracking-widest">02</span>
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dr. Miguel Ángel Siller</h3>
@@ -563,9 +614,9 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="200" class="bg-white border border-outline-variant">
-<div class="aspect-[4/5] flex items-center justify-center bg-surface-container-low relative">
-<span class="material-symbols-outlined text-primary opacity-20" style="font-size: 120px;">person</span>
-<span class="absolute top-4 right-4 text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">03</span>
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" alt="Dra. Kriseel Suárez" src="KRISEL.webp"/>
+<span class="absolute top-4 right-4 text-label-md font-semibold text-white bg-primary/90 backdrop-blur-sm px-3 py-1 uppercase tracking-widest">03</span>
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dra. Kriseel Suárez</h3>
@@ -574,9 +625,9 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 </div>
 <div data-anim="scale-in" class="bg-white border border-outline-variant">
-<div class="aspect-[4/5] flex items-center justify-center bg-surface-container-low relative">
-<span class="material-symbols-outlined text-primary opacity-20" style="font-size: 120px;">person</span>
-<span class="absolute top-4 right-4 text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">04</span>
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" alt="Dra. Gladys López" src="GLADYS.webp"/>
+<span class="absolute top-4 right-4 text-label-md font-semibold text-white bg-primary/90 backdrop-blur-sm px-3 py-1 uppercase tracking-widest">04</span>
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dra. Gladys López</h3>
@@ -585,9 +636,9 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="100" class="bg-white border border-outline-variant">
-<div class="aspect-[4/5] flex items-center justify-center bg-surface-container-low relative">
-<span class="material-symbols-outlined text-primary opacity-20" style="font-size: 120px;">person</span>
-<span class="absolute top-4 right-4 text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">05</span>
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" alt="Dr. Oscar Vizcarra" src="OSCAR.webp"/>
+<span class="absolute top-4 right-4 text-label-md font-semibold text-white bg-primary/90 backdrop-blur-sm px-3 py-1 uppercase tracking-widest">05</span>
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dr. Oscar Vizcarra</h3>
@@ -596,9 +647,9 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="200" class="bg-white border border-outline-variant">
-<div class="aspect-[4/5] flex items-center justify-center bg-surface-container-low relative">
-<span class="material-symbols-outlined text-primary opacity-20" style="font-size: 120px;">person</span>
-<span class="absolute top-4 right-4 text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">06</span>
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" alt="Dra. Melisa Zúñiga" src="MELISA.webp"/>
+<span class="absolute top-4 right-4 text-label-md font-semibold text-white bg-primary/90 backdrop-blur-sm px-3 py-1 uppercase tracking-widest">06</span>
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dra. Melisa Zúñiga</h3>
@@ -616,7 +667,7 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <section id="promociones" class="bg-primary text-white py-16 md:py-section-gap">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="max-w-3xl mb-16" data-anim="fade-up">
-<span class="text-label-md font-semibold uppercase mb-4 block tracking-widest" style="color: #95d0de;">Promociones · Julio 2026</span>
+<span class="text-label-md font-semibold uppercase mb-4 block tracking-widest" style="color: #95d0de;">Promociones · Agosto 2026</span>
 <h2 class="text-headline-lg font-bold mb-6 text-white">Precios especiales del mes</h2>
 <p class="text-body-lg leading-relaxed" style="color: #bfc8ca;">Valoración gratuita incluida en todos los tratamientos promocionados.</p>
 </div>
@@ -667,7 +718,7 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20B%C3%B3tox" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all">Reservar</a>
 </div>
 </div>
-<p data-anim="fade" data-anim-delay="300" class="mt-12 text-sm text-center" style="color: #bfc8ca;">Vigencia: julio 2026. Aplican restricciones. Consulta términos al agendar tu valoración.</p>
+<p data-anim="fade" data-anim-delay="300" class="mt-12 text-sm text-center" style="color: #bfc8ca;">Vigencia: agosto 2026. Aplican restricciones. Consulta términos al agendar tu valoración.</p>
 </div>
 </section>
 
@@ -932,7 +983,7 @@ Llamar
 <footer id="contacto" class="bg-surface-container border-t border-outline-variant w-full py-16 px-margin-mobile md:px-margin-desktop pb-24 md:pb-16">
 <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12" data-anim="fade-up">
 <div>
-<img src="logo.jpg" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-12 w-auto mb-6"/>
+<img src="logo-01.png" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-12 w-auto mb-6"/>
 <p class="text-body-md text-on-surface-variant leading-relaxed">Clínica dental y de belleza en el corazón de Ciudad Juárez. Cuidamos tu presente para proteger tu futuro.</p>
 <div class="flex gap-3 mt-6">
 <a href="#" class="w-10 h-10 rounded-full bg-white border border-outline-variant flex items-center justify-center text-verde-petroleo hover:bg-verde-petroleo hover:text-white transition-all" aria-label="Facebook">
@@ -1017,6 +1068,35 @@ document.addEventListener('DOMContentLoaded', () => {
             currentRotator = (currentRotator + 1) % rotatorItems.length;
             rotatorItems[currentRotator].classList.add('is-active');
         }, 2500);
+    }
+
+    /* ============= HERO CAROUSEL ============= */
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+    let currentSlide = 0;
+    let carouselInterval;
+
+    function goToSlide(index) {
+        heroSlides.forEach(s => s.classList.remove('is-active'));
+        heroDots.forEach(d => d.classList.remove('is-active'));
+        currentSlide = index;
+        if (heroSlides[currentSlide]) heroSlides[currentSlide].classList.add('is-active');
+        if (heroDots[currentSlide]) heroDots[currentSlide].classList.add('is-active');
+    }
+
+    function nextSlide() {
+        goToSlide((currentSlide + 1) % heroSlides.length);
+    }
+
+    if (heroSlides.length > 0) {
+        carouselInterval = setInterval(nextSlide, 5000);
+        heroDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+                clearInterval(carouselInterval);
+                carouselInterval = setInterval(nextSlide, 5000);
+            });
+        });
     }
 
     /* ============= MOBILE MENU ============= */
