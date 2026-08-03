@@ -347,16 +347,21 @@
 <img loading="lazy" src="logo-01.png" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-10 md:h-12 w-auto"/>
 </a>
 <nav class="hidden md:flex gap-6 lg:gap-8 items-center">
-<a class="text-primary font-bold text-label-md hover:opacity-70 transition-opacity" href="#tratamientos">Tratamientos</a>
-<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#nosotros">Nosotros</a>
-<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#especialistas">Especialistas</a>
-<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#promociones">Promociones</a>
-<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#testimonios">Testimonios</a>
-<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#faq">FAQ</a>
-<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#contacto">Contacto</a>
+<a class="text-primary font-bold text-label-md hover:opacity-70 transition-opacity" href="#tratamientos" data-en="Treatments">Tratamientos</a>
+<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#nosotros" data-en="About Us">Nosotros</a>
+<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#especialistas" data-en="Specialists">Especialistas</a>
+<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#promociones" data-en="Promotions">Promociones</a>
+<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#testimonios" data-en="Testimonials">Testimonios</a>
+<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#faq" data-en="FAQ">FAQ</a>
+<a class="text-on-surface-variant text-label-md hover:opacity-70 transition-opacity" href="#contacto" data-en="Contact">Contacto</a>
 </nav>
 <div class="flex items-center gap-3">
-<a href="#agendar" class="hidden md:inline-block bg-verde-petroleo text-white px-6 py-2 text-label-md font-semibold rounded hover:opacity-90 active:scale-95 transition-all">RESERVAR</a>
+<!-- Language Toggle -->
+<button id="lang-toggle" class="hidden md:flex items-center gap-1 text-label-md font-semibold text-on-surface-variant hover:text-primary border border-outline-variant rounded-full px-3 py-1.5 transition-all" aria-label="Change language">
+<span class="material-symbols-outlined" style="font-size: 16px;">language</span>
+<span id="lang-current">ES</span>
+</button>
+<a href="#agendar" class="hidden md:inline-block bg-verde-petroleo text-white px-6 py-2 text-label-md font-semibold rounded hover:opacity-90 active:scale-95 transition-all" data-en="BOOK NOW">RESERVAR</a>
 <button id="menu-toggle" class="md:hidden text-primary" aria-label="Abrir menú">
 <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
 </button>
@@ -369,14 +374,18 @@
 <img loading="lazy" src="logo-01.png" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-10 w-auto"/>
 </div>
 <nav class="flex flex-col gap-6 text-lg">
-<a class="text-primary font-bold border-b border-outline-variant pb-4" href="#tratamientos" onclick="closeMenu()">Tratamientos</a>
-<a class="text-on-surface border-b border-outline-variant pb-4" href="#nosotros" onclick="closeMenu()">Nosotros</a>
-<a class="text-on-surface border-b border-outline-variant pb-4" href="#especialistas" onclick="closeMenu()">Especialistas</a>
-<a class="text-on-surface border-b border-outline-variant pb-4" href="#promociones" onclick="closeMenu()">Promociones</a>
-<a class="text-on-surface border-b border-outline-variant pb-4" href="#testimonios" onclick="closeMenu()">Testimonios</a>
-<a class="text-on-surface border-b border-outline-variant pb-4" href="#faq" onclick="closeMenu()">Preguntas Frecuentes</a>
-<a class="text-on-surface border-b border-outline-variant pb-4" href="#contacto" onclick="closeMenu()">Contacto</a>
-<a href="#agendar" onclick="closeMenu()" class="mt-4 bg-verde-petroleo text-white text-center py-4 rounded font-semibold">AGENDAR CITA</a>
+<a class="text-primary font-bold border-b border-outline-variant pb-4" href="#tratamientos" onclick="closeMenu()" data-en="Treatments">Tratamientos</a>
+<a class="text-on-surface border-b border-outline-variant pb-4" href="#nosotros" onclick="closeMenu()" data-en="About Us">Nosotros</a>
+<a class="text-on-surface border-b border-outline-variant pb-4" href="#especialistas" onclick="closeMenu()" data-en="Specialists">Especialistas</a>
+<a class="text-on-surface border-b border-outline-variant pb-4" href="#promociones" onclick="closeMenu()" data-en="Promotions">Promociones</a>
+<a class="text-on-surface border-b border-outline-variant pb-4" href="#testimonios" onclick="closeMenu()" data-en="Testimonials">Testimonios</a>
+<a class="text-on-surface border-b border-outline-variant pb-4" href="#faq" onclick="closeMenu()" data-en="Frequently Asked Questions">Preguntas Frecuentes</a>
+<a class="text-on-surface border-b border-outline-variant pb-4" href="#contacto" onclick="closeMenu()" data-en="Contact">Contacto</a>
+<a href="#agendar" onclick="closeMenu()" class="mt-4 bg-verde-petroleo text-white text-center py-4 rounded font-semibold" data-en="BOOK APPOINTMENT">AGENDAR CITA</a>
+<button id="lang-toggle-mobile" class="mt-4 flex items-center justify-center gap-2 border border-outline-variant text-on-surface-variant py-3 rounded font-semibold">
+<span class="material-symbols-outlined" style="font-size: 18px;">language</span>
+<span id="lang-current-mobile">Cambiar a English</span>
+</button>
 </nav>
 </div>
 
@@ -406,25 +415,25 @@
 </div>
 <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
 <div class="max-w-2xl">
-<span data-anim="fade-up" class="text-label-md font-semibold uppercase tracking-[0.3em] text-verde-petroleo mb-6 block">Clínica Santa Fe · Ciudad Juárez</span>
+<span data-anim="fade-up" class="text-label-md font-semibold uppercase tracking-[0.3em] text-verde-petroleo mb-6 block">Clínica Santa Fe · Ciudad Juárez [DATA_EN_HERO_OVERLINE]</span>
 <h1 data-anim="fade-up" data-anim-delay="100" class="text-display-lg-mobile md:text-display-lg text-on-surface mb-4 font-bold leading-tight">
 Recibe el mejor<br>tratamiento de
 </h1>
 <div data-anim="fade-up" data-anim-delay="200" class="text-display-lg-mobile md:text-display-lg font-bold mb-8">
 <span class="rotator" id="hero-rotator">
-<span class="is-active">Bótox.</span>
-<span>Dentista.</span>
-<span>Depilación.</span>
-<span>Ortodoncia.</span>
-<span>HIFU.</span>
+<span class="is-active" data-en="Botox.">Bótox.</span>
+<span data-en="Dentistry.">Dentista.</span>
+<span data-en="Hair Removal.">Depilación.</span>
+<span data-en="Orthodontics.">Ortodoncia.</span>
+<span data-en="HIFU.">HIFU.</span>
 </span>
 </div>
-<p data-anim="fade-up" data-anim-delay="300" class="text-body-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+<p data-anim="fade-up" data-anim-delay="300" class="text-body-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed" data-en="In medicine we don't just treat disease, we care for the person. Eight years in the heart of Ciudad Juárez, protecting your present to secure your future.">
 En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años en el corazón de Ciudad Juárez, protegiendo tu presente para asegurar tu futuro.
 </p>
 <div data-anim="fade-up" data-anim-delay="400" class="flex flex-wrap gap-4">
-<a href="#agendar" class="bg-verde-petroleo text-white px-8 py-4 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all">Agendar Cita</a>
-<a href="#tratamientos" class="border border-on-surface text-on-surface px-8 py-4 text-label-md font-semibold uppercase tracking-wider rounded hover:bg-on-surface hover:text-white transition-all">Ver Tratamientos</a>
+<a href="#agendar" class="bg-verde-petroleo text-white px-8 py-4 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all" data-en="Book Appointment">Agendar Cita</a>
+<a href="#tratamientos" class="border border-on-surface text-on-surface px-8 py-4 text-label-md font-semibold uppercase tracking-wider rounded hover:bg-on-surface hover:text-white transition-all" data-en="View Treatments">Ver Tratamientos</a>
 </div>
 </div>
 </div>
@@ -441,12 +450,12 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 </div>
 <div class="md:col-span-5 md:col-start-8">
-<span data-anim="fade-up" class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block">Quiénes Somos</span>
-<h2 data-anim="fade-up" data-anim-delay="100" class="text-headline-lg text-on-surface mb-6 font-bold">Ocho años cuidando de nuestra comunidad</h2>
+<span data-anim="fade-up" class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block" data-en="About Us">Quiénes Somos</span>
+<h2 data-anim="fade-up" data-anim-delay="100" class="text-headline-lg text-on-surface mb-6 font-bold" data-en="Eight years caring for our community">Ocho años cuidando de nuestra comunidad</h2>
 <div data-anim="fade-up" data-anim-delay="200" class="space-y-5 text-on-surface-variant leading-relaxed">
-<p>Hace ocho años abrimos nuestras puertas en el corazón de Ciudad Juárez con una promesa: atención médica de calidad, sin distinciones.</p>
-<p>La respuesta de la comunidad ha sido nuestra mayor motivación. La excelencia del servicio cruzó fronteras, y hoy atendemos también a pacientes de Estados Unidos que buscan el cuidado y la experiencia que ofrecemos.</p>
-<p>Con la misma pasión con la que empezamos, seguimos cuidando de ti y de los tuyos.</p>
+<p data-en="Eight years ago we opened our doors in the heart of Ciudad Juárez with a promise: quality medical care, without distinction.">Hace ocho años abrimos nuestras puertas en el corazón de Ciudad Juárez con una promesa: atención médica de calidad, sin distinciones.</p>
+<p data-en="The community's response has been our greatest motivation. Excellence crossed borders, and today we also welcome patients from the United States seeking the care and experience we offer.">La respuesta de la comunidad ha sido nuestra mayor motivación. La excelencia del servicio cruzó fronteras, y hoy atendemos también a pacientes de Estados Unidos que buscan el cuidado y la experiencia que ofrecemos.</p>
+<p data-en="With the same passion we started with, we keep caring for you and your loved ones.">Con la misma pasión con la que empezamos, seguimos cuidando de ti y de los tuyos.</p>
 </div>
 </div>
 </div>
@@ -455,19 +464,19 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-16 md:mt-24">
 <div data-anim="fade-up" class="text-center md:text-left border-t-2 border-verde-petroleo pt-6">
 <div class="text-4xl md:text-5xl font-bold text-primary mb-2">8</div>
-<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Años de experiencia</div>
+<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant" data-en="Years of experience">Años de experiencia</div>
 </div>
 <div data-anim="fade-up" data-anim-delay="100" class="text-center md:text-left border-t-2 border-verde-petroleo pt-6">
 <div class="text-4xl md:text-5xl font-bold text-primary mb-2">+999</div>
-<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Pacientes felices</div>
+<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant" data-en="Happy patients">Pacientes felices</div>
 </div>
 <div data-anim="fade-up" data-anim-delay="200" class="text-center md:text-left border-t-2 border-verde-petroleo pt-6">
 <div class="text-4xl md:text-5xl font-bold text-primary mb-2">5</div>
-<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Doctores certificados</div>
+<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant" data-en="Certified doctors">Doctores certificados</div>
 </div>
 <div data-anim="fade-up" data-anim-delay="300" class="text-center md:text-left border-t-2 border-verde-petroleo pt-6">
 <div class="text-4xl md:text-5xl font-bold text-primary mb-2">4</div>
-<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Módulos de atención</div>
+<div class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant" data-en="Care modules">Módulos de atención</div>
 </div>
 </div>
 </section>
@@ -479,23 +488,23 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
 <div data-anim="fade-right" class="md:col-span-2">
-<span class="text-label-md font-semibold uppercase tracking-widest mb-3 block" style="color: #95d0de;">Llama hoy mismo</span>
-<h3 class="text-3xl md:text-4xl font-bold text-white mb-3">¿Necesitas atención inmediata?</h3>
-<p class="text-white/80 text-body-lg max-w-xl">Nuestro equipo responde en minutos vía WhatsApp. Valoración inicial gratuita en la mayoría de tratamientos.</p>
+<span class="text-label-md font-semibold uppercase tracking-widest mb-3 block" style="color: #95d0de;" data-en="Call today">Llama hoy mismo</span>
+<h3 class="text-3xl md:text-4xl font-bold text-white mb-3" data-en="Need immediate attention?">¿Necesitas atención inmediata?</h3>
+<p class="text-white/80 text-body-lg max-w-xl" data-en="Our team responds in minutes via WhatsApp. Free initial consultation on most treatments.">Nuestro equipo responde en minutos vía WhatsApp. Valoración inicial gratuita en la mayoría de tratamientos.</p>
 </div>
 <div data-anim="fade-left" class="flex flex-col gap-3">
 <a href="tel:+19152318964" class="flex items-center gap-3 bg-white text-primary px-6 py-4 rounded font-semibold hover:opacity-90 transition-all">
 <span class="material-symbols-outlined">call</span>
 <div>
-<div class="text-xs uppercase tracking-widest opacity-60">Llamar</div>
+<div class="text-xs uppercase tracking-widest opacity-60" data-en="Call">Llamar</div>
 <div>(915) 231-8964</div>
 </div>
 </a>
 <a href="https://wa.me/19152318964?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded font-semibold hover:opacity-90 transition-all">
 <span class="material-symbols-outlined">chat</span>
 <div>
-<div class="text-xs uppercase tracking-widest opacity-80">WhatsApp</div>
-<div>Chat directo</div>
+<div class="text-xs uppercase tracking-widest opacity-80" data-en="WhatsApp">WhatsApp</div>
+<div data-en="Direct chat">Chat directo</div>
 </div>
 </a>
 </div>
@@ -510,24 +519,24 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 
 <!-- Section heading -->
 <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-<span data-anim="fade-up" class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block">Catálogo de Tratamientos</span>
-<h2 data-anim="fade-up" data-anim-delay="100" class="text-headline-lg font-bold mb-6">Odontología integral y estética avanzada</h2>
-<p data-anim="fade-up" data-anim-delay="200" class="text-body-lg text-on-surface-variant">Todo en un mismo lugar. Con especialistas certificados y tecnología de vanguardia.</p>
+<span data-anim="fade-up" class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block" data-en="Treatment Catalog">Catálogo de Tratamientos</span>
+<h2 data-anim="fade-up" data-anim-delay="100" class="text-headline-lg font-bold mb-6" data-en="Comprehensive dentistry and advanced aesthetics">Odontología integral y estética avanzada</h2>
+<p data-anim="fade-up" data-anim-delay="200" class="text-body-lg text-on-surface-variant" data-en="All in one place. With certified specialists and cutting-edge technology.">Todo en un mismo lugar. Con especialistas certificados y tecnología de vanguardia.</p>
 </div>
 
 <!-- Featured Treatment: Láser CO2 -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-20 md:mb-32">
 <div class="md:col-span-5 order-2 md:order-1" data-anim="fade-right">
-<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3 block">Tratamiento Destacado</span>
-<h3 class="text-headline-lg font-bold mb-6">Bótox</h3>
-<p class="text-on-surface-variant mb-8 leading-relaxed">El tratamiento estético más buscado. En una sesión de 15 minutos, sin tiempo de recuperación, suavizamos las líneas de expresión, prevenimos arrugas futuras y devolvemos al rostro un aspecto fresco y descansado de forma segura y natural.</p>
+<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3 block" data-en="Featured Treatment">Tratamiento Destacado</span>
+<h3 class="text-headline-lg font-bold mb-6" data-en="Botox" data-en="Botox">Bótox</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed" data-en="The most sought-after aesthetic treatment. In a 15-minute session, with no downtime, we smooth expression lines, prevent future wrinkles, and restore a fresh, rested look — safely and naturally.">El tratamiento estético más buscado. En una sesión de 15 minutos, sin tiempo de recuperación, suavizamos las líneas de expresión, prevenimos arrugas futuras y devolvemos al rostro un aspecto fresco y descansado de forma segura y natural.</p>
 <ul class="space-y-4 mb-10">
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Sesión de 15 minutos</li>
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Sin tiempo de inactividad</li>
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Suaviza y previene arrugas</li>
-<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span>Resultados naturales y seguros</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span data-en="15-minute session">Sesión de 15 minutos</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span data-en="Zero downtime">Sin tiempo de inactividad</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span data-en="Smooths and prevents wrinkles">Suaviza y previene arrugas</li>
+<li class="flex items-center gap-3 text-label-md font-semibold text-on-surface"><span class="material-symbols-outlined text-verde-petroleo" style="font-size: 18px;">check_circle</span data-en="Natural, safe results">Resultados naturales y seguros</li>
 </ul>
-<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20el%20tratamiento%20de%20B%C3%B3tox" target="_blank" rel="noopener noreferrer" class="inline-block bg-verde-petroleo text-white px-8 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all">Agendar Valoración</a>
+<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20el%20tratamiento%20de%20B%C3%B3tox" target="_blank" rel="noopener noreferrer" class="inline-block bg-verde-petroleo text-white px-8 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all" data-en="Book Consultation">Agendar Valoración</a>
 </div>
 <div class="md:col-span-6 md:col-start-7 order-1 md:order-2" data-anim="fade-left">
 <div class="aspect-[4/5] bg-surface-container overflow-hidden">
@@ -543,50 +552,50 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <span class="material-symbols-outlined text-verde-petroleo">dentistry</span>
 </div>
 <div>
-<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">Categoría</span>
-<h3 class="text-2xl md:text-3xl font-bold">Odontología</h3>
+<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest" data-en="Category">Categoría</span>
+<h3 class="text-2xl md:text-3xl font-bold" data-en="Dentistry">Odontología</h3>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 <div data-anim="fade-up" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">medical_services</span>
-<h4 class="font-bold text-lg mb-2">Odontología General</h4>
-<p class="text-sm text-on-surface-variant">Limpiezas, resinas y diagnóstico preventivo para toda la familia.</p>
+<h4 class="font-bold text-lg mb-2" data-en="General Dentistry">Odontología General</h4>
+<p class="text-sm text-on-surface-variant" data-en="Cleanings, fillings, and preventive diagnosis for the whole family.">Limpiezas, resinas y diagnóstico preventivo para toda la familia.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="100" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">healing</span>
-<h4 class="font-bold text-lg mb-2">Periodoncia</h4>
-<p class="text-sm text-on-surface-variant">Diagnóstico y tratamiento de encías para controlar enfermedades periodontales.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Periodontics">Periodoncia</h4>
+<p class="text-sm text-on-surface-variant" data-en="Gum diagnosis and treatment to manage periodontal disease.">Diagnóstico y tratamiento de encías para controlar enfermedades periodontales.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="200" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">lightbulb</span>
-<h4 class="font-bold text-lg mb-2">Blanqueamientos</h4>
-<p class="text-sm text-on-surface-variant">Aclara el tono natural de tus dientes con resultados desde la primera sesión.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Teeth Whitening">Blanqueamientos</h4>
+<p class="text-sm text-on-surface-variant" data-en="Brighten the natural shade of your teeth — results from the first session.">Aclara el tono natural de tus dientes con resultados desde la primera sesión.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="300" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">emergency</span>
-<h4 class="font-bold text-lg mb-2">Endodoncias</h4>
-<p class="text-sm text-on-surface-variant">Tratamos el interior del diente para eliminar infecciones y salvar piezas dañadas.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Root Canals">Endodoncias</h4>
+<p class="text-sm text-on-surface-variant" data-en="We treat the inside of the tooth to eliminate infection and save damaged pieces.">Tratamos el interior del diente para eliminar infecciones y salvar piezas dañadas.</p>
 </div>
 <div data-anim="fade-up" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">align_horizontal_center</span>
-<h4 class="font-bold text-lg mb-2">Ortodoncia</h4>
-<p class="text-sm text-on-surface-variant">Corrige la posición dental para mejorar mordida, salud bucal y sonrisa.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Orthodontics">Ortodoncia</h4>
+<p class="text-sm text-on-surface-variant" data-en="Correct dental position to improve bite, oral health, and smile.">Corrige la posición dental para mejorar mordida, salud bucal y sonrisa.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="100" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">dentistry</span>
-<h4 class="font-bold text-lg mb-2">Prótesis</h4>
-<p class="text-sm text-on-surface-variant">Reemplaza piezas dentales perdidas devolviendo función y estética.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Prosthetics">Prótesis</h4>
+<p class="text-sm text-on-surface-variant" data-en="Replace missing teeth, restoring function and aesthetics.">Reemplaza piezas dentales perdidas devolviendo función y estética.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="200" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">construction</span>
-<h4 class="font-bold text-lg mb-2">Implantes</h4>
-<p class="text-sm text-on-surface-variant">Solución avanzada y permanente para reemplazar uno o varios dientes.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Implants">Implantes</h4>
+<p class="text-sm text-on-surface-variant" data-en="Advanced permanent solution to replace one or several teeth.">Solución avanzada y permanente para reemplazar uno o varios dientes.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="300" class="border border-outline-variant bg-surface-container-low p-6 hover:bg-surface-container transition-all flex flex-col justify-center">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">arrow_forward</span>
-<h4 class="font-bold text-lg mb-2">Consulta más</h4>
-<a href="https://wa.me/19152318964?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20tratamientos%20dentales" target="_blank" rel="noopener noreferrer" class="text-verde-petroleo font-semibold text-sm hover:underline">Hablar por WhatsApp →</a>
+<h4 class="font-bold text-lg mb-2" data-en="Ask about more">Consulta más</h4>
+<a href="https://wa.me/19152318964?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20tratamientos%20dentales" target="_blank" rel="noopener noreferrer" class="text-verde-petroleo font-semibold text-sm hover:underline" data-en="Chat via WhatsApp →">Hablar por WhatsApp →</a>
 </div>
 </div>
 </div>
@@ -598,40 +607,40 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <span class="material-symbols-outlined text-verde-petroleo">spa</span>
 </div>
 <div>
-<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest">Categoría</span>
-<h3 class="text-2xl md:text-3xl font-bold">Estética y Belleza</h3>
+<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest" data-en="Category">Categoría</span>
+<h3 class="text-2xl md:text-3xl font-bold" data-en="Aesthetics &amp; Beauty">Estética y Belleza</h3>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 <div data-anim="fade-up" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">flare</span>
-<h4 class="font-bold text-lg mb-2">Hollywood Peeling</h4>
-<p class="text-sm text-on-surface-variant">Láser facial no invasivo. Piel radiante de inmediato sin recuperación.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Hollywood Peeling">Hollywood Peeling</h4>
+<p class="text-sm text-on-surface-variant" data-en="Non-invasive facial laser. Instantly radiant skin, no downtime.">Láser facial no invasivo. Piel radiante de inmediato sin recuperación.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="100" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">radio_button_checked</span>
-<h4 class="font-bold text-lg mb-2">HIFU</h4>
-<p class="text-sm text-on-surface-variant">Ultrasonido no invasivo para combatir flacidez sin cirugía.</p>
+<h4 class="font-bold text-lg mb-2" data-en="HIFU">HIFU</h4>
+<p class="text-sm text-on-surface-variant" data-en="Non-invasive ultrasound to fight sagging — no surgery.">Ultrasonido no invasivo para combatir flacidez sin cirugía.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="200" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">face</span>
-<h4 class="font-bold text-lg mb-2">Bótox</h4>
-<p class="text-sm text-on-surface-variant">Suaviza y previene arrugas de expresión con resultados naturales.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Botox">Bótox</h4>
+<p class="text-sm text-on-surface-variant" data-en="Smooths and prevents expression lines with natural results.">Suaviza y previene arrugas de expresión con resultados naturales.</p>
 </div>
 <div data-anim="fade-up" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">water_drop</span>
-<h4 class="font-bold text-lg mb-2">Rellenos Faciales</h4>
-<p class="text-sm text-on-surface-variant">Ácido hialurónico que devuelve volumen respetando tu identidad.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Facial Fillers">Rellenos Faciales</h4>
+<p class="text-sm text-on-surface-variant" data-en="Hyaluronic acid that restores volume while respecting your identity.">Ácido hialurónico que devuelve volumen respetando tu identidad.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="100" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">bolt</span>
-<h4 class="font-bold text-lg mb-2">Depilación Láser</h4>
-<p class="text-sm text-on-surface-variant">Láser diodo: método avanzado, rápido y seguro para eliminar el vello.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Laser Hair Removal">Depilación Láser</h4>
+<p class="text-sm text-on-surface-variant" data-en="Diode laser: an advanced, fast, safe method to remove hair.">Láser diodo: método avanzado, rápido y seguro para eliminar el vello.</p>
 </div>
 <div data-anim="fade-up" data-anim-delay="200" class="border border-outline-variant bg-white p-6 hover:bg-surface-container-low transition-all">
 <span class="material-symbols-outlined text-verde-petroleo mb-3" style="font-size: 32px;">accessibility_new</span>
-<h4 class="font-bold text-lg mb-2">Reductivo Corporal</h4>
-<p class="text-sm text-on-surface-variant">Modela la figura y reduce medidas en zonas localizadas.</p>
+<h4 class="font-bold text-lg mb-2" data-en="Body Contouring">Reductivo Corporal</h4>
+<p class="text-sm text-on-surface-variant" data-en="Shape the figure and reduce measurements in targeted areas.">Modela la figura y reduce medidas en zonas localizadas.</p>
 </div>
 </div>
 </div>
@@ -643,9 +652,9 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <section id="especialistas" class="bg-surface-container py-16 md:py-section-gap">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="max-w-3xl mb-16" data-anim="fade-up">
-<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block">Equipo Clínico</span>
-<h2 class="text-headline-lg font-bold mb-6">Conoce a nuestros especialistas</h2>
-<p class="text-body-lg text-on-surface-variant">Bajo la dirección de la Dra. Cecia Gutierrez, nuestro equipo combina odontología integral y medicina estética para atenderte con la excelencia que nos caracteriza.</p>
+<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block" data-en="Clinical Team">Equipo Clínico</span>
+<h2 class="text-headline-lg font-bold mb-6" data-en="Meet our specialists">Conoce a nuestros especialistas</h2>
+<p class="text-body-lg text-on-surface-variant" data-en="Under the direction of Dr. Cecia Gutierrez, our team combines comprehensive dentistry and aesthetic medicine to care for you with our signature excellence.">Bajo la dirección de la Dra. Cecia Gutierrez, nuestro equipo combina odontología integral y medicina estética para atenderte con la excelencia que nos caracteriza.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <div data-anim="scale-in" class="bg-white border border-outline-variant">
@@ -655,8 +664,8 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dr. Miguel Ángel Siller</h3>
-<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3">Medicina Estética</p>
-<p class="text-sm text-on-surface-variant">Especialista en Bótox, rellenos, HIFU y rejuvenecimiento facial no invasivo.</p>
+<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3" data-en="Aesthetic Medicine">Medicina Estética</p>
+<p class="text-sm text-on-surface-variant" data-en="Specialist in Botox, fillers, HIFU, and non-invasive facial rejuvenation.">Especialista en Bótox, rellenos, HIFU y rejuvenecimiento facial no invasivo.</p>
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="100" class="bg-white border border-outline-variant">
@@ -666,8 +675,8 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dra. Kriseel Suárez</h3>
-<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3">Rehabilitación Oral</p>
-<p class="text-sm text-on-surface-variant">Reconstruye sonrisas con prótesis, coronas e implantes de alta calidad.</p>
+<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3" data-en="Oral Rehabilitation">Rehabilitación Oral</p>
+<p class="text-sm text-on-surface-variant" data-en="Rebuilds smiles with high-quality prosthetics, crowns, and implants.">Reconstruye sonrisas con prótesis, coronas e implantes de alta calidad.</p>
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="200" class="bg-white border border-outline-variant">
@@ -677,8 +686,8 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dra. Gladys López</h3>
-<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3">Ortodoncista</p>
-<p class="text-sm text-on-surface-variant">Corrige la posición dental para mejorar mordida, salud bucal y armonía.</p>
+<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3" data-en="Orthodontist">Ortodoncista</p>
+<p class="text-sm text-on-surface-variant" data-en="Corrects dental position to improve bite, oral health, and harmony.">Corrige la posición dental para mejorar mordida, salud bucal y armonía.</p>
 </div>
 </div>
 <div data-anim="scale-in" class="bg-white border border-outline-variant">
@@ -688,8 +697,8 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dr. Oscar Vizcarra</h3>
-<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3">Rehabilitación Oral</p>
-<p class="text-sm text-on-surface-variant">Devuelve función y estética a piezas dañadas con procedimientos avanzados.</p>
+<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3" data-en="Oral Rehabilitation">Rehabilitación Oral</p>
+<p class="text-sm text-on-surface-variant" data-en="Restores function and aesthetics to damaged pieces with advanced procedures.">Devuelve función y estética a piezas dañadas con procedimientos avanzados.</p>
 </div>
 </div>
 <div data-anim="scale-in" data-anim-delay="100" class="bg-white border border-outline-variant">
@@ -699,8 +708,8 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 </div>
 <div class="p-6">
 <h3 class="font-bold text-xl mb-1">Dra. Melisa Zúñiga</h3>
-<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3">Endodoncista</p>
-<p class="text-sm text-on-surface-variant">Trata el interior del diente para eliminar infecciones y salvar piezas.</p>
+<p class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-3" data-en="Endodontist">Endodoncista</p>
+<p class="text-sm text-on-surface-variant" data-en="Treats the inside of the tooth to eliminate infection and save pieces.">Trata el interior del diente para eliminar infecciones y salvar piezas.</p>
 </div>
 </div>
 </div>
@@ -713,58 +722,58 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <section id="promociones" class="bg-primary text-white py-16 md:py-section-gap">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="max-w-3xl mb-16" data-anim="fade-up">
-<span class="text-label-md font-semibold uppercase mb-4 block tracking-widest" style="color: #95d0de;">Promociones · Agosto 2026</span>
-<h2 class="text-headline-lg font-bold mb-6 text-white">Precios especiales del mes</h2>
-<p class="text-body-lg leading-relaxed" style="color: #bfc8ca;">Valoración gratuita incluida en todos los tratamientos promocionados.</p>
+<span class="text-label-md font-semibold uppercase mb-4 block tracking-widest" style="color: #95d0de;" data-en="Promotions · August 2026">Promociones · Agosto 2026</span>
+<h2 class="text-headline-lg font-bold mb-6 text-white" data-en="Special prices this month">Precios especiales del mes</h2>
+<p class="text-body-lg leading-relaxed" style="color: #bfc8ca;" data-en="Free consultation included on all promoted treatments.">Valoración gratuita incluida en todos los tratamientos promocionados.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div data-anim="fade-up" class="border p-8 md:p-10 transition-all hover:bg-primary-container" style="border-color: #034e5a;">
-<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;">Tratamiento</span>
-<h3 class="font-bold text-xl md:text-2xl text-white mb-6">Depilación Láser</h3>
+<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;" data-en="Treatment">Tratamiento</span>
+<h3 class="font-bold text-xl md:text-2xl text-white mb-6" data-en="Laser Hair Removal">Depilación Láser</h3>
 <div class="mb-8">
 <span class="text-5xl md:text-6xl font-bold text-white block leading-none">$4,599</span>
 <span class="text-label-md font-semibold uppercase tracking-widest" style="color: #bfc8ca;">MXN</span>
 </div>
 <ul class="space-y-3 mb-10">
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Piernas completas</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>6 sesiones incluidas</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Tecnología láser diodo</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Valoración gratuita</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Full legs">Piernas completas</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="6 sessions included">6 sesiones incluidas</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Diode laser technology">Tecnología láser diodo</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Free consultation">Valoración gratuita</li>
 </ul>
-<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20Depilaci%C3%B3n%20L%C3%A1ser" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all">Reservar</a>
+<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20Depilaci%C3%B3n%20L%C3%A1ser" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all" data-en="Book">Reservar</a>
 </div>
 <div data-anim="fade-up" data-anim-delay="100" class="border p-8 md:p-10 transition-all hover:bg-primary-container" style="border-color: #034e5a;">
-<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;">Tratamiento</span>
-<h3 class="font-bold text-xl md:text-2xl text-white mb-6">Hollywood Peel</h3>
+<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;" data-en="Treatment">Tratamiento</span>
+<h3 class="font-bold text-xl md:text-2xl text-white mb-6" data-en="Hollywood Peel">Hollywood Peel</h3>
 <div class="mb-8">
 <span class="text-5xl md:text-6xl font-bold text-white block leading-none">$39</span>
 <span class="text-label-md font-semibold uppercase tracking-widest" style="color: #bfc8ca;">USD</span>
 </div>
 <ul class="space-y-3 mb-10">
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>1 sesión facial completa</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Precio especial por paquete</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Efecto luminoso inmediato</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Valoración gratuita</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="1 full facial session">1 sesión facial completa</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Special package price">Precio especial por paquete</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Immediate luminous effect">Efecto luminoso inmediato</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Free consultation">Valoración gratuita</li>
 </ul>
-<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20Hollywood%20Peel" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all">Reservar</a>
+<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20Hollywood%20Peel" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all" data-en="Book">Reservar</a>
 </div>
 <div data-anim="fade-up" data-anim-delay="200" class="border p-8 md:p-10 transition-all hover:bg-primary-container" style="border-color: #034e5a;">
-<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;">Tratamiento</span>
-<h3 class="font-bold text-xl md:text-2xl text-white mb-6">Bótox</h3>
+<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;" data-en="Treatment">Tratamiento</span>
+<h3 class="font-bold text-xl md:text-2xl text-white mb-6" data-en="Botox" data-en="Botox">Bótox</h3>
 <div class="mb-8">
 <span class="text-5xl md:text-6xl font-bold text-white block leading-none">$180</span>
 <span class="text-label-md font-semibold uppercase tracking-widest" style="color: #bfc8ca;">USD</span>
 </div>
 <ul class="space-y-3 mb-10">
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>1 sesión completa</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>30 unidades incluidas</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Aplicación por especialista</li>
-<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span>Valoración gratuita</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="1 full session">1 sesión completa</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="30 units included">30 unidades incluidas</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Applied by specialist">Aplicación por especialista</li>
+<li class="flex items-center gap-3 text-sm" style="color: #e2e2e2;"><span class="material-symbols-outlined" style="font-size: 18px; color: #95d0de;">check</span data-en="Free consultation">Valoración gratuita</li>
 </ul>
-<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20B%C3%B3tox" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all">Reservar</a>
+<a href="https://wa.me/19152318964?text=Hola%2C%20me%20interesa%20la%20promo%20de%20B%C3%B3tox" target="_blank" rel="noopener noreferrer" class="block text-center bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 active:scale-95 transition-all" data-en="Book">Reservar</a>
 </div>
 </div>
-<p data-anim="fade" data-anim-delay="300" class="mt-12 text-sm text-center" style="color: #bfc8ca;">Vigencia: agosto 2026. Aplican restricciones. Consulta términos al agendar tu valoración.</p>
+<p data-anim="fade" data-anim-delay="300" class="mt-12 text-sm text-center" style="color: #bfc8ca;" data-en="Valid: August 2026. Restrictions apply. Ask about terms when you book your consultation.">Vigencia: agosto 2026. Aplican restricciones. Consulta términos al agendar tu valoración.</p>
 </div>
 </section>
 
@@ -774,29 +783,29 @@ En la medicina no solo tratamos la enfermedad, cuidamos a la persona. Ocho años
 <section id="agendar" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-section-gap">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <div class="md:col-span-5" data-anim="fade-right">
-<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block">Agendar Cita</span>
-<h2 class="text-headline-lg font-bold mb-6">Da el primer paso hacia tu bienestar</h2>
-<p class="text-body-lg text-on-surface-variant mb-8 leading-relaxed">Agenda tu cita de forma rápida. Elige la fecha que mejor se adapte a tu horario y da el primer paso para cuidar tu salud con nuestros especialistas.</p>
+<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block" data-en="Book Appointment">Agendar Cita</span>
+<h2 class="text-headline-lg font-bold mb-6" data-en="Take the first step toward your wellbeing">Da el primer paso hacia tu bienestar</h2>
+<p class="text-body-lg text-on-surface-variant mb-8 leading-relaxed" data-en="Book your appointment quickly. Choose the date that best fits your schedule and take the first step toward caring for your health with our specialists.">Agenda tu cita de forma rápida. Elige la fecha que mejor se adapte a tu horario y da el primer paso para cuidar tu salud con nuestros especialistas.</p>
 
 <div class="space-y-4">
 <div class="flex gap-4 items-start p-4 border border-outline-variant bg-white">
 <span class="material-symbols-outlined text-verde-petroleo">location_on</span>
 <div>
-<p class="font-bold text-sm mb-1">Dirección</p>
+<p class="font-bold text-sm mb-1" data-en="Address">Dirección</p>
 <p class="text-sm text-on-surface-variant">Av. Benito Juárez 388 Nte,<br>Centro, 32000 Juárez, Chih.</p>
 </div>
 </div>
 <div class="flex gap-4 items-start p-4 border border-outline-variant bg-white">
 <span class="material-symbols-outlined text-verde-petroleo">schedule</span>
 <div>
-<p class="font-bold text-sm mb-1">Horario</p>
-<p class="text-sm text-on-surface-variant">Lun–Vie 9:00am – 5:00pm<br>Sábado 9:00am – 2:00pm</p>
+<p class="font-bold text-sm mb-1" data-en="Hours">Horario</p>
+<p class="text-sm text-on-surface-variant" data-en="Mon–Fri 9:00am – 5:00pm<br>Saturday 9:00am – 2:00pm">Lun–Vie 9:00am – 5:00pm<br>Sábado 9:00am – 2:00pm</p>
 </div>
 </div>
 <div class="flex gap-4 items-start p-4 border border-outline-variant bg-white">
 <span class="material-symbols-outlined text-verde-petroleo">call</span>
 <div>
-<p class="font-bold text-sm mb-1">Teléfonos</p>
+<p class="font-bold text-sm mb-1" data-en="Phones">Teléfonos</p>
 <p class="text-sm text-on-surface-variant">
 <a href="tel:+19152318964" class="hover:text-primary">(915) 231-8964</a> · 
 <a href="tel:+526566151452" class="hover:text-primary">(656) 615-1452</a>
@@ -822,63 +831,63 @@ title="Ubicación Clínica Santa Fe">
 
 <div class="md:col-span-6 md:col-start-7" data-anim="fade-left">
 <form class="bg-white border border-outline-variant p-8 md:p-10" onsubmit="return sendToWhatsApp(event)">
-<h3 class="font-bold text-xl mb-6">Solicita tu cita</h3>
+<h3 class="font-bold text-xl mb-6" data-en="Request an appointment">Solicita tu cita</h3>
 
 <div class="space-y-5">
 <div>
-<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block">Nombre completo</label>
-<input required type="text" id="form-name" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none" placeholder="Tu nombre"/>
+<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block" data-en="Full name">Nombre completo</label>
+<input required type="text" id="form-name" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none" placeholder="Tu nombre" data-en-placeholder="Your name"/>
 </div>
 
 <div>
-<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block">Teléfono</label>
-<input required type="tel" id="form-phone" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none" placeholder="(915) 000-0000"/>
+<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block" data-en="Phone">Teléfono</label>
+<input required type="tel" id="form-phone" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none" placeholder="(915) 000-0000" data-en-placeholder="(915) 000-0000"/>
 </div>
 
 <div>
-<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block">Tratamiento de interés</label>
+<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block" data-en="Treatment of interest">Tratamiento de interés</label>
 <select required id="form-treatment" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none">
-<option value="">Selecciona un tratamiento</option>
-<optgroup label="Odontología">
-<option>Odontología General</option>
-<option>Periodoncia</option>
-<option>Blanqueamiento</option>
-<option>Endodoncia</option>
-<option>Ortodoncia</option>
-<option>Prótesis</option>
-<option>Implantes</option>
+<option value="" data-en="Select a treatment">Selecciona un tratamiento</option>
+<optgroup label="Odontología" data-en-label="Dentistry">
+<option data-en="General Dentistry">Odontología General</option>
+<option data-en="Periodontics">Periodoncia</option>
+<option data-en="Whitening">Blanqueamiento</option>
+<option data-en="Root Canal">Endodoncia</option>
+<option data-en="Orthodontics">Ortodoncia</option>
+<option data-en="Prosthetics">Prótesis</option>
+<option data-en="Implants">Implantes</option>
 </optgroup>
-<optgroup label="Estética y Belleza">
-<option>Hollywood Peeling</option>
-<option>HIFU</option>
-<option>Bótox</option>
-<option>Rellenos Faciales</option>
-<option>Depilación Láser</option>
-<option>Reductivo Corporal</option>
-<option>Láser CO2 Fraccionado</option>
+<optgroup label="Estética y Belleza" data-en-label="Aesthetics & Beauty">
+<option data-en="Hollywood Peeling">Hollywood Peeling</option>
+<option data-en="HIFU">HIFU</option>
+<option data-en="Botox">Bótox</option>
+<option data-en="Facial Fillers">Rellenos Faciales</option>
+<option data-en="Laser Hair Removal">Depilación Láser</option>
+<option data-en="Body Contouring">Reductivo Corporal</option>
+<option data-en="Fractional CO2 Laser">Láser CO2 Fraccionado</option>
 </optgroup>
 </select>
 </div>
 
 <div>
-<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block">¿Cuándo te gustaría venir?</label>
+<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block" data-en="When would you like to come?">¿Cuándo te gustaría venir?</label>
 <select required id="form-date" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none">
-<option value="">Selecciona una opción</option>
-<option>Esta semana</option>
-<option>La próxima semana</option>
-<option>En 2-3 semanas</option>
-<option>Sin prisa, cuando haya disponibilidad</option>
+<option value="" data-en="Select an option">Selecciona una opción</option>
+<option data-en="This week">Esta semana</option>
+<option data-en="Next week">La próxima semana</option>
+<option data-en="In 2-3 weeks">En 2-3 semanas</option>
+<option data-en="No rush, when available">Sin prisa, cuando haya disponibilidad</option>
 </select>
 </div>
 
 <div>
-<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block">Email (opcional)</label>
-<input type="email" id="form-email" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none" placeholder="tu@correo.com"/>
+<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block" data-en="Email (optional)">Email (opcional)</label>
+<input type="email" id="form-email" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none" placeholder="tu@correo.com" data-en-placeholder="your@email.com"/>
 </div>
 
 <div>
-<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block">Mensaje (opcional)</label>
-<textarea id="form-message" rows="3" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none resize-none" placeholder="Cuéntanos brevemente qué buscas"></textarea>
+<label class="text-label-md font-semibold uppercase tracking-widest text-on-surface-variant mb-2 block" data-en="Message (optional)">Mensaje (opcional)</label>
+<textarea id="form-message" rows="3" class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:border-verde-petroleo focus:ring-0 outline-none resize-none" placeholder="Cuéntanos brevemente qué buscas" data-en-placeholder="Tell us briefly what you're looking for"></textarea>
 </div>
 </div>
 
@@ -887,7 +896,7 @@ title="Ubicación Clínica Santa Fe">
 Enviar por WhatsApp
 </button>
 
-<p class="text-xs text-on-surface-variant text-center mt-4">Al enviar, se abrirá WhatsApp con tu solicitud pre-cargada. Un especialista te confirmará la cita.</p>
+<p class="text-xs text-on-surface-variant text-center mt-4" data-en="On submit, WhatsApp opens with your request pre-loaded. A specialist will confirm your appointment.">Al enviar, se abrirá WhatsApp con tu solicitud pre-cargada. Un especialista te confirmará la cita.</p>
 </form>
 </div>
 </div>
@@ -901,8 +910,8 @@ Enviar por WhatsApp
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <div class="md:col-span-5" data-anim="fade-right">
 <span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block">FAQ</span>
-<h2 class="text-headline-lg font-bold mb-6">Preguntas frecuentes</h2>
-<p class="text-body-lg text-on-surface-variant mb-8 leading-relaxed">Las dudas que nuestros pacientes preguntan con más frecuencia. Si tu pregunta no está aquí, escríbenos por WhatsApp.</p>
+<h2 class="text-headline-lg font-bold mb-6" data-en="Frequently asked questions">Preguntas frecuentes</h2>
+<p class="text-body-lg text-on-surface-variant mb-8 leading-relaxed" data-en="The questions our patients ask most often. If yours isn't here, message us on WhatsApp.">Las dudas que nuestros pacientes preguntan con más frecuencia. Si tu pregunta no está aquí, escríbenos por WhatsApp.</p>
 <a href="https://wa.me/19152318964?text=Hola%2C%20tengo%20una%20pregunta" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-verde-petroleo text-white px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all">
 <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
 Otra pregunta
@@ -912,91 +921,91 @@ Otra pregunta
 <div class="md:col-span-6 md:col-start-7 space-y-3">
 <div class="faq-item is-open bg-white border border-outline-variant" data-anim="fade-up">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Dónde se encuentran ubicados?</span>
+<span class="font-bold text-base md:text-lg" data-en="Where are you located?">¿Dónde se encuentran ubicados?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Estamos en Av. Benito Juárez 388 Nte, Centro, 32000 Juárez, Chih., a pocos minutos del Puente Internacional Santa Fe. Fácil acceso desde El Paso, TX.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="We're at Av. Benito Juárez 388 Nte, Centro, 32000 Juárez, Chih., minutes from the Santa Fe International Bridge. Easy access from El Paso, TX.">Estamos en Av. Benito Juárez 388 Nte, Centro, 32000 Juárez, Chih., a pocos minutos del Puente Internacional Santa Fe. Fácil acceso desde El Paso, TX.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="100">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Por qué confiar en nosotros?</span>
+<span class="font-bold text-base md:text-lg" data-en="Why trust us?">¿Por qué confiar en nosotros?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Ocho años de trayectoria en el corazón de Ciudad Juárez nos han consolidado como un pilar de salud en la frontera. Nuestro compromiso con la excelencia y el trato humano nos ganó la lealtad de la comunidad y atrae diariamente a pacientes de Estados Unidos que buscan resultados de primer nivel.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="Eight years of experience in the heart of Ciudad Juárez have established us as a healthcare landmark on the border. Our commitment to excellence and human touch earned the community's loyalty and daily brings patients from the United States seeking top-tier results.">Ocho años de trayectoria en el corazón de Ciudad Juárez nos han consolidado como un pilar de salud en la frontera. Nuestro compromiso con la excelencia y el trato humano nos ganó la lealtad de la comunidad y atrae diariamente a pacientes de Estados Unidos que buscan resultados de primer nivel.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="200">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Puedo hacerme tratamientos dentales y estéticos el mismo día?</span>
+<span class="font-bold text-base md:text-lg" data-en="Can I get dental and aesthetic treatments the same day?">¿Puedo hacerme tratamientos dentales y estéticos el mismo día?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Sí. Una de nuestras mayores ventajas es la atención integral en un solo lugar. Muchos pacientes combinan una limpieza dental o revisión de implantes con Bótox o depilación láser en la misma cita. Solo menciónalo al agendar para reservar el tiempo necesario con nuestros especialistas.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="Yes. One of our biggest advantages is comprehensive care in one place. Many patients combine a dental cleaning or implant checkup with Botox or laser hair removal in the same visit. Just mention it when booking so we can reserve enough time with our specialists.">Sí. Una de nuestras mayores ventajas es la atención integral en un solo lugar. Muchos pacientes combinan una limpieza dental o revisión de implantes con Bótox o depilación láser en la misma cita. Solo menciónalo al agendar para reservar el tiempo necesario con nuestros especialistas.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="300">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Qué materiales usan para implantes y tratamientos estéticos?</span>
+<span class="font-bold text-base md:text-lg" data-en="What materials do you use for implants and aesthetic treatments?">¿Qué materiales usan para implantes y tratamientos estéticos?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Usamos exclusivamente materiales de grado médico, biocompatibles y de marcas reconocidas a nivel internacional, tanto en implantes de titanio como en productos estéticos como la toxina botulínica. La misma calidad premium que encontrarías en Estados Unidos, a precios más accesibles.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="We use only medical-grade, biocompatible materials from internationally recognized brands, both for titanium implants and aesthetic products like botulinum toxin. The same premium quality you'd find in the United States, at more accessible prices.">Usamos exclusivamente materiales de grado médico, biocompatibles y de marcas reconocidas a nivel internacional, tanto en implantes de titanio como en productos estéticos como la toxina botulínica. La misma calidad premium que encontrarías en Estados Unidos, a precios más accesibles.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="400">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Tienen valoración inicial gratuita?</span>
+<span class="font-bold text-base md:text-lg" data-en="Do you offer a free initial consultation?">¿Tienen valoración inicial gratuita?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Sí. En casi todos nuestros tratamientos, la consulta de valoración inicial es completamente gratuita. Cada paciente es único, por lo que usamos este espacio para darte un diagnóstico preciso y un plan a tu medida sin costo. Contáctanos por WhatsApp para agendar tu valoración y conocer las excepciones que aplican en estudios muy especializados.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="Yes. On almost all our treatments, the initial consultation is completely free. Every patient is unique, so we use this time to give you an accurate diagnosis and a plan tailored to you — at no cost. Message us on WhatsApp to book your consultation and learn about the exceptions that apply to highly specialized studies.">Sí. En casi todos nuestros tratamientos, la consulta de valoración inicial es completamente gratuita. Cada paciente es único, por lo que usamos este espacio para darte un diagnóstico preciso y un plan a tu medida sin costo. Contáctanos por WhatsApp para agendar tu valoración y conocer las excepciones que aplican en estudios muy especializados.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Cuánto cuestan los tratamientos?</span>
+<span class="font-bold text-base md:text-lg" data-en="How much do treatments cost?">¿Cuánto cuestan los tratamientos?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Los precios dependen del tratamiento y complejidad del caso. Publicamos promociones vigentes en la sección de precios especiales, y en tu valoración gratuita te entregamos un presupuesto claro por escrito. Comparado con clínicas de Estados Unidos, nuestros pacientes reportan ahorros del 40% al 70% con la misma calidad clínica.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="Prices depend on the treatment and complexity of the case. We publish active promotions in the special prices section, and in your free consultation we give you a clear written quote. Compared to US clinics, our patients report savings of 40% to 70% with the same clinical quality.">Los precios dependen del tratamiento y complejidad del caso. Publicamos promociones vigentes en la sección de precios especiales, y en tu valoración gratuita te entregamos un presupuesto claro por escrito. Comparado con clínicas de Estados Unidos, nuestros pacientes reportan ahorros del 40% al 70% con la misma calidad clínica.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="100">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Aceptan tarjeta y dan facilidades de pago?</span>
+<span class="font-bold text-base md:text-lg" data-en="Do you accept cards and offer payment plans?">¿Aceptan tarjeta y dan facilidades de pago?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">Sí. Aceptamos efectivo, tarjetas de débito y crédito (Visa, MasterCard, American Express) y también tarjetas americanas sin cargos por conversión. Para tratamientos de mayor inversión como ortodoncia o implantes, ofrecemos planes de pago flexibles. Los detalles se acuerdan en tu valoración.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="Yes. We accept cash, debit and credit cards (Visa, MasterCard, American Express), and US cards with no conversion fees. For larger investments like orthodontics or implants, we offer flexible payment plans. Details are discussed in your consultation.">Sí. Aceptamos efectivo, tarjetas de débito y crédito (Visa, MasterCard, American Express) y también tarjetas americanas sin cargos por conversión. Para tratamientos de mayor inversión como ortodoncia o implantes, ofrecemos planes de pago flexibles. Los detalles se acuerdan en tu valoración.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="200">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Cuánto dura el efecto del Bótox?</span>
+<span class="font-bold text-base md:text-lg" data-en="How long does the Botox effect last?">¿Cuánto dura el efecto del Bótox?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">El efecto del Bótox dura entre 4 y 6 meses en la mayoría de los pacientes. En aplicaciones consecutivas, muchos pacientes reportan que la duración se extiende porque el músculo se acostumbra al relajamiento. Recomendamos sesiones de mantenimiento cada 4-5 meses para conservar los resultados de forma continua.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="The Botox effect lasts 4 to 6 months in most patients. With consecutive applications, many patients report the duration extends because the muscle adapts to relaxation. We recommend maintenance sessions every 4-5 months to keep results going.">El efecto del Bótox dura entre 4 y 6 meses en la mayoría de los pacientes. En aplicaciones consecutivas, muchos pacientes reportan que la duración se extiende porque el músculo se acostumbra al relajamiento. Recomendamos sesiones de mantenimiento cada 4-5 meses para conservar los resultados de forma continua.</p>
 </div>
 </div>
 
 <div class="faq-item bg-white border border-outline-variant" data-anim="fade-up" data-anim-delay="300">
 <button class="faq-header w-full flex justify-between items-center gap-4 text-left p-6" onclick="toggleFaq(this)">
-<span class="font-bold text-base md:text-lg">¿Los tratamientos son dolorosos?</span>
+<span class="font-bold text-base md:text-lg" data-en="Are the treatments painful?">¿Los tratamientos son dolorosos?</span>
 <span class="faq-toggle material-symbols-outlined text-verde-petroleo shrink-0">add</span>
 </button>
 <div class="faq-body px-6">
-<p class="pb-6 text-on-surface-variant leading-relaxed">La mayoría de nuestros tratamientos son mínimamente invasivos y bien tolerados. En procedimientos dentales usamos anestesia local para tu comodidad. En tratamientos estéticos como Bótox o rellenos, aplicamos anestesia tópica antes de la sesión. Nuestro compromiso es que tu experiencia sea lo más cómoda posible.</p>
+<p class="pb-6 text-on-surface-variant leading-relaxed" data-en="Most of our treatments are minimally invasive and well tolerated. For dental procedures we use local anesthesia for your comfort. For aesthetic treatments like Botox or fillers, we apply topical anesthesia before the session. Our commitment is making your experience as comfortable as possible.">La mayoría de nuestros tratamientos son mínimamente invasivos y bien tolerados. En procedimientos dentales usamos anestesia local para tu comodidad. En tratamientos estéticos como Bótox o rellenos, aplicamos anestesia tópica antes de la sesión. Nuestro compromiso es que tu experiencia sea lo más cómoda posible.</p>
 </div>
 </div>
 </div>
@@ -1011,8 +1020,8 @@ Otra pregunta
 <!-- Puedes copiar reseñas de tu perfil de Google Business. -->
 <section id="testimonios" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-section-gap">
 <div class="text-center max-w-3xl mx-auto mb-16" data-anim="fade-up">
-<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block">Lo que dicen nuestros pacientes</span>
-<h2 class="text-headline-lg font-bold mb-6">Historias reales, sonrisas reales</h2>
+<span class="text-label-md font-semibold text-verde-petroleo uppercase tracking-widest mb-4 block" data-en="What our patients say">Lo que dicen nuestros pacientes</span>
+<h2 class="text-headline-lg font-bold mb-6" data-en="Real stories, real smiles">Historias reales, sonrisas reales</h2>
 <div class="flex items-center justify-center gap-2">
 <div class="flex text-yellow-400">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -1021,7 +1030,7 @@ Otra pregunta
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<span class="text-sm text-on-surface-variant font-semibold">4.9 / 5 en Google</span>
+<span class="text-sm text-on-surface-variant font-semibold" data-en="4.9 / 5 on Google">4.9 / 5 en Google</span>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1033,12 +1042,12 @@ Otra pregunta
 <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface-variant leading-relaxed mb-6">"Excelente atención de todo el equipo. Me hice un blanqueamiento y quedé encantada con el resultado. El trato de la Dra. Cecia y su equipo es inmejorable."</p>
+<p class="text-on-surface-variant leading-relaxed mb-6" data-en="&quot;Excellent care from the whole team. I got teeth whitening and I'm thrilled with the result. Dr. Cecia and her team's treatment is unmatched.&quot;">"Excelente atención de todo el equipo. Me hice un blanqueamiento y quedé encantada con el resultado. El trato de la Dra. Cecia y su equipo es inmejorable."</p>
 <div class="flex items-center gap-3 pt-6 border-t border-outline-variant">
 <div class="w-10 h-10 rounded-full bg-verde-petroleo/10 flex items-center justify-center font-bold text-verde-petroleo">M</div>
 <div>
-<p class="font-bold text-sm">María G.</p>
-<p class="text-xs text-on-surface-variant">Blanqueamiento dental</p>
+<p class="font-bold text-sm" data-en="Maria G.">María G.</p>
+<p class="text-xs text-on-surface-variant" data-en="Teeth Whitening">Blanqueamiento dental</p>
 </div>
 </div>
 </div>
@@ -1050,12 +1059,12 @@ Otra pregunta
 <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface-variant leading-relaxed mb-6">"Cruzo desde El Paso cada 3 meses para mis sesiones de bótox con el Dr. Siller. Resultados súper naturales y a un precio inigualable. Totalmente recomendados."</p>
+<p class="text-on-surface-variant leading-relaxed mb-6" data-en="&quot;I cross from El Paso every 3 months for my Botox sessions with Dr. Siller. Super natural results and unbeatable prices. Fully recommended.&quot;">"Cruzo desde El Paso cada 3 meses para mis sesiones de bótox con el Dr. Siller. Resultados súper naturales y a un precio inigualable. Totalmente recomendados."</p>
 <div class="flex items-center gap-3 pt-6 border-t border-outline-variant">
 <div class="w-10 h-10 rounded-full bg-verde-petroleo/10 flex items-center justify-center font-bold text-verde-petroleo">J</div>
 <div>
-<p class="font-bold text-sm">Jennifer R.</p>
-<p class="text-xs text-on-surface-variant">Bótox · El Paso, TX</p>
+<p class="font-bold text-sm" data-en="Jennifer R.">Jennifer R.</p>
+<p class="text-xs text-on-surface-variant" data-en="Botox · El Paso, TX">Bótox · El Paso, TX</p>
 </div>
 </div>
 </div>
@@ -1067,12 +1076,12 @@ Otra pregunta
 <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface-variant leading-relaxed mb-6">"Terminé mi tratamiento de ortodoncia con la Dra. Gladys y no puedo estar más feliz. Profesionalismo, puntualidad y precios justos. Aquí me quedo para todo."</p>
+<p class="text-on-surface-variant leading-relaxed mb-6" data-en="&quot;I finished my orthodontic treatment with Dr. Gladys and I couldn't be happier. Professionalism, punctuality, and fair prices. I'm here for everything from now on.&quot;">"Terminé mi tratamiento de ortodoncia con la Dra. Gladys y no puedo estar más feliz. Profesionalismo, puntualidad y precios justos. Aquí me quedo para todo."</p>
 <div class="flex items-center gap-3 pt-6 border-t border-outline-variant">
 <div class="w-10 h-10 rounded-full bg-verde-petroleo/10 flex items-center justify-center font-bold text-verde-petroleo">C</div>
 <div>
-<p class="font-bold text-sm">Carlos H.</p>
-<p class="text-xs text-on-surface-variant">Ortodoncia</p>
+<p class="font-bold text-sm" data-en="Carlos H.">Carlos H.</p>
+<p class="text-xs text-on-surface-variant" data-en="Orthodontics">Ortodoncia</p>
 </div>
 </div>
 </div>
@@ -1153,9 +1162,9 @@ Book in English
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-section-gap">
 <div class="grid grid-cols-1 md:grid-cols-2 border border-outline-variant overflow-hidden">
 <div class="bg-primary text-white p-10 md:p-16 flex flex-col justify-center" data-anim="fade-right">
-<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;">Sin costo</span>
-<h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Valoración inicial gratuita</h2>
-<p class="text-white/80 mb-8 leading-relaxed">Diagnóstico preciso y plan de tratamiento personalizado, sin compromiso. Aplica en la mayoría de nuestros tratamientos dentales y estéticos.</p>
+<span class="text-label-md font-semibold uppercase tracking-widest mb-4 block" style="color: #95d0de;" data-en="No cost">Sin costo</span>
+<h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight" data-en="Free initial consultation">Valoración inicial gratuita</h2>
+<p class="text-white/80 mb-8 leading-relaxed" data-en="Accurate diagnosis and personalized treatment plan, no strings attached. Applies to most of our dental and aesthetic treatments.">Diagnóstico preciso y plan de tratamiento personalizado, sin compromiso. Aplica en la mayoría de nuestros tratamientos dentales y estéticos.</p>
 <div class="flex flex-wrap gap-3">
 <a href="https://wa.me/19152318964?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20valoraci%C3%B3n%20gratuita" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 text-label-md font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all">
 <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
@@ -1174,8 +1183,8 @@ Llamar
 <span class="material-symbols-outlined text-verde-petroleo">medical_services</span>
 </div>
 <div>
-<h4 class="font-bold mb-1">Diagnóstico especializado</h4>
-<p class="text-sm text-on-surface-variant">Evaluación completa con nuestros especialistas certificados.</p>
+<h4 class="font-bold mb-1" data-en="Specialized diagnosis">Diagnóstico especializado</h4>
+<p class="text-sm text-on-surface-variant" data-en="Comprehensive evaluation with our certified specialists.">Evaluación completa con nuestros especialistas certificados.</p>
 </div>
 </div>
 <div class="flex gap-4">
@@ -1183,8 +1192,8 @@ Llamar
 <span class="material-symbols-outlined text-verde-petroleo">list_alt</span>
 </div>
 <div>
-<h4 class="font-bold mb-1">Plan personalizado</h4>
-<p class="text-sm text-on-surface-variant">Diseñado a tu medida, con precios claros y sin sorpresas.</p>
+<h4 class="font-bold mb-1" data-en="Personalized plan">Plan personalizado</h4>
+<p class="text-sm text-on-surface-variant" data-en="Tailored to you, with clear prices and no surprises.">Diseñado a tu medida, con precios claros y sin sorpresas.</p>
 </div>
 </div>
 <div class="flex gap-4">
@@ -1192,8 +1201,8 @@ Llamar
 <span class="material-symbols-outlined text-verde-petroleo">handshake</span>
 </div>
 <div>
-<h4 class="font-bold mb-1">Sin compromiso</h4>
-<p class="text-sm text-on-surface-variant">Tu decisión es lo primero. Ninguna presión para agendar.</p>
+<h4 class="font-bold mb-1" data-en="No commitment">Sin compromiso</h4>
+<p class="text-sm text-on-surface-variant" data-en="Your decision comes first. Zero pressure to book.">Tu decisión es lo primero. Ninguna presión para agendar.</p>
 </div>
 </div>
 </div>
@@ -1209,19 +1218,19 @@ Llamar
 <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-2 pb-safe bg-surface/95 backdrop-blur-xl border-t border-outline-variant z-40">
 <a class="flex flex-col items-center justify-center text-primary font-semibold text-[11px] active:scale-90 transition-transform" href="#tratamientos">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 24px;">medical_services</span>
-<span>Tratamientos</span>
+<span data-en="Treatments">Tratamientos</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant text-[11px] active:scale-90 transition-transform" href="#nosotros">
 <span class="material-symbols-outlined" style="font-size: 24px;">groups</span>
-<span>Nosotros</span>
+<span data-en="About Us">Nosotros</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant text-[11px] active:scale-90 transition-transform" href="#agendar">
 <span class="material-symbols-outlined" style="font-size: 24px;">event</span>
-<span>Agendar</span>
+<span data-en="Book">Agendar</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant text-[11px] active:scale-90 transition-transform" href="tel:+19152318964">
 <span class="material-symbols-outlined" style="font-size: 24px;">call</span>
-<span>Llamar</span>
+<span data-en="Call">Llamar</span>
 </a>
 </nav>
 
@@ -1232,7 +1241,7 @@ Llamar
 <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12" data-anim="fade-up">
 <div>
 <img loading="lazy" src="logo-01.png" alt="Clínica Santa Fe Dental &amp; Beauty" class="h-12 w-auto mb-6"/>
-<p class="text-body-md text-on-surface-variant leading-relaxed">Clínica dental y de belleza en el corazón de Ciudad Juárez. Cuidamos tu presente para proteger tu futuro.</p>
+<p class="text-body-md text-on-surface-variant leading-relaxed" data-en="Dental and beauty clinic in the heart of Ciudad Juárez. We care for your present to protect your future.">Clínica dental y de belleza en el corazón de Ciudad Juárez. Cuidamos tu presente para proteger tu futuro.</p>
 <div class="flex gap-3 mt-6">
 <a href="#" class="w-10 h-10 rounded-full bg-white border border-outline-variant flex items-center justify-center text-verde-petroleo hover:bg-verde-petroleo hover:text-white transition-all" aria-label="Facebook">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
@@ -1246,25 +1255,25 @@ Llamar
 </div>
 </div>
 <div>
-<h4 class="text-label-md font-semibold text-verde-petroleo uppercase mb-4 tracking-widest">Tratamientos</h4>
+<h4 class="text-label-md font-semibold text-verde-petroleo uppercase mb-4 tracking-widest" data-en="Treatments">Tratamientos</h4>
 <ul class="space-y-3">
 <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#tratamientos">Odontología</a></li>
 <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#tratamientos">Estética y Belleza</a></li>
-<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#tratamientos">Bótox y Rellenos</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#tratamientos" data-en="Botox &amp; Fillers">Bótox y Rellenos</a></li>
 <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#tratamientos">HIFU</a></li>
 <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#tratamientos">Depilación Láser</a></li>
 </ul>
 </div>
 <div>
-<h4 class="text-label-md font-semibold text-verde-petroleo uppercase mb-4 tracking-widest">Horario</h4>
+<h4 class="text-label-md font-semibold text-verde-petroleo uppercase mb-4 tracking-widest" data-en="Hours">Horario</h4>
 <ul class="space-y-3 text-body-md text-on-surface-variant">
-<li>Lunes a Viernes<br><span class="text-on-surface">9:00am – 5:00pm</span></li>
-<li>Sábado<br><span class="text-on-surface">9:00am – 2:00pm</span></li>
-<li>Domingo<br><span class="text-on-surface">Cerrado</span></li>
+<li data-en="Monday to Friday">Lunes a Viernes<br><span class="text-on-surface">9:00am – 5:00pm</span></li>
+<li data-en="Saturday">Sábado<br><span class="text-on-surface">9:00am – 2:00pm</span></li>
+<li data-en="Sunday">Domingo<br><span class="text-on-surface" data-en="Closed">Cerrado</span></li>
 </ul>
 </div>
 <div>
-<h4 class="text-label-md font-semibold text-verde-petroleo uppercase mb-4 tracking-widest">Contacto</h4>
+<h4 class="text-label-md font-semibold text-verde-petroleo uppercase mb-4 tracking-widest" data-en="Contact">Contacto</h4>
 <ul class="space-y-4 text-body-md text-on-surface-variant">
 <li class="flex gap-3">
 <span class="material-symbols-outlined text-verde-petroleo shrink-0" style="font-size: 20px;">location_on</span>
@@ -1285,17 +1294,70 @@ Llamar
 </div>
 </div>
 <div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-<p class="text-label-md text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant opacity-60">© 2026 CLÍNICA SANTA FE. TODOS LOS DERECHOS RESERVADOS.</p>
+<p class="text-label-md text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant opacity-60" data-en="© 2026 CLÍNICA SANTA FE. ALL RIGHTS RESERVED.">© 2026 CLÍNICA SANTA FE. TODOS LOS DERECHOS RESERVADOS.</p>
 <div class="flex gap-6">
-<a class="text-label-md text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">Política de Privacidad</a>
-<a class="text-label-md text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#">Aviso Legal</a>
+<a class="text-label-md text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#" data-en="Privacy Policy">Política de Privacidad</a>
+<a class="text-label-md text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity" href="#" data-en="Legal Notice">Aviso Legal</a>
 </div>
 </div>
 </footer>
 
 <script>
+/* ============= LANGUAGE TOGGLE (ES/EN) ============= */
+const LANG_KEY = 'clinicaSantaFeLang';
+let currentLang = localStorage.getItem(LANG_KEY) || 'es';
+const spanishStore = new WeakMap();
+
+function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem(LANG_KEY, lang);
+    document.documentElement.setAttribute('lang', lang);
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+        if (!spanishStore.has(el)) {
+            spanishStore.set(el, el.innerHTML);
+        }
+        const es = spanishStore.get(el);
+        const en = el.getAttribute('data-en');
+        el.innerHTML = (lang === 'en') ? en : es;
+    });
+
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        if (!el.dataset.esPlaceholder) el.dataset.esPlaceholder = el.getAttribute('placeholder') || '';
+        el.setAttribute('placeholder', lang === 'en' ? el.getAttribute('data-en-placeholder') : el.dataset.esPlaceholder);
+    });
+
+    document.querySelectorAll('[data-en-label]').forEach(el => {
+        if (!el.dataset.esLabel) el.dataset.esLabel = el.getAttribute('label') || '';
+        el.setAttribute('label', lang === 'en' ? el.getAttribute('data-en-label') : el.dataset.esLabel);
+    });
+
+    const langCurrent = document.getElementById('lang-current');
+    const langCurrentMobile = document.getElementById('lang-current-mobile');
+    if (langCurrent) langCurrent.textContent = lang === 'en' ? 'EN' : 'ES';
+    if (langCurrentMobile) langCurrentMobile.textContent = lang === 'en' ? 'Cambiar a Español' : 'Switch to English';
+
+    document.title = lang === 'en'
+        ? 'Santa Fe Clinic - Dentistry and Aesthetics | Ciudad Juárez'
+        : 'Clínica Santa Fe - Odontología y Estética | Ciudad Juárez';
+
+    const menuBtn = document.getElementById('menu-toggle');
+    if (menuBtn) menuBtn.setAttribute('aria-label', lang === 'en' ? 'Open menu' : 'Abrir menú');
+}
+
+function toggleLanguage() {
+    applyLanguage(currentLang === 'es' ? 'en' : 'es');
+}
+
 /* ============= SCROLL ANIMATIONS ============= */
 document.addEventListener('DOMContentLoaded', () => {
+    /* Language toggle wiring */
+    const langToggle = document.getElementById('lang-toggle');
+    const langToggleMobile = document.getElementById('lang-toggle-mobile');
+    if (langToggle) langToggle.addEventListener('click', toggleLanguage);
+    if (langToggleMobile) langToggleMobile.addEventListener('click', toggleLanguage);
+    applyLanguage(currentLang);
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1392,9 +1454,14 @@ function sendToWhatsApp(e) {
     const email = document.getElementById('form-email').value;
     const message = document.getElementById('form-message').value;
 
-    let text = `Hola, quiero agendar una cita.%0A%0A*Nombre:* ${encodeURIComponent(name)}%0A*Teléfono:* ${encodeURIComponent(phone)}%0A*Tratamiento:* ${encodeURIComponent(treatment)}%0A*Cuándo:* ${encodeURIComponent(date)}`;
-    if (email) text += `%0A*Email:* ${encodeURIComponent(email)}`;
-    if (message) text += `%0A*Mensaje:* ${encodeURIComponent(message)}`;
+    const isEn = document.documentElement.getAttribute('lang') === 'en';
+    const labels = isEn
+        ? { greeting: 'Hi, I want to book an appointment.', name: 'Name', phone: 'Phone', treatment: 'Treatment', when: 'When', email: 'Email', message: 'Message' }
+        : { greeting: 'Hola, quiero agendar una cita.', name: 'Nombre', phone: 'Teléfono', treatment: 'Tratamiento', when: 'Cuándo', email: 'Email', message: 'Mensaje' };
+
+    let text = `${labels.greeting}%0A%0A*${labels.name}:* ${encodeURIComponent(name)}%0A*${labels.phone}:* ${encodeURIComponent(phone)}%0A*${labels.treatment}:* ${encodeURIComponent(treatment)}%0A*${labels.when}:* ${encodeURIComponent(date)}`;
+    if (email) text += `%0A*${labels.email}:* ${encodeURIComponent(email)}`;
+    if (message) text += `%0A*${labels.message}:* ${encodeURIComponent(message)}`;
 
     window.open(`https://wa.me/19152318964?text=${text}`, '_blank');
     return false;
